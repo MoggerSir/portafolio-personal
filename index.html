@@ -1,0 +1,107 @@
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portafolio Josmar</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+    <header class="header">
+        
+            <div class="logo">
+            <div class="nombre">Josmar Francisco Galindo Ocampo</div>
+            </div>
+            <div class="menu">
+                <div class="seccion" onclick="document.getElementById('proyectos').scrollIntoView({behavior: 'smooth'})">proyectos</div>
+                <div class="seccion" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">certificados</div>
+                <div class="seccion" onclick="document.getElementById('sobre_mi').scrollIntoView({behavior: 'smooth'})">sobre mi</div>
+            </div>
+        </header>
+
+        <div class="contenedor">
+
+        <div class="principal">
+
+            <img id="foto" src="img/mi foto.jpeg" alt="mi foto" width="200px">
+
+            <div class="foto">
+                <h1>Josmar Francisco <br>Galindo Ocampo</h1>
+                <h2>Estudiante de ingeniería en software</h2>
+                <h3>Desarrollador Frontend en formación</h3>
+            </div>
+
+            <div class="contacto-wrapper">
+                <div class="botones_contacto">
+                    <div href="mailto:addnovel1474@gmail.com" class="Correo">✉ Contáctame</div>
+                    <div class="Correo">
+                        <img src="img/github-logo.png" width="50px" alt="icono de github">
+                        GitHub
+                    </div>
+                </div>
+
+                <div id="iconos">
+                    <img class="iconos" src="img/js-icon.png" alt="icono de js">
+                    <img class="iconos" src="img/html-icon.png" alt="icono de html">
+                    <img class="iconos" src="img/css-icon.png" alt="icono de css">
+                    <img class="iconos" src="img/git-icon.png" alt="icono de git">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="proyectos_contenedor" id="proyectos">
+            <div>
+                <h2>Proyectos de aprendizaje</h2>
+            </div>
+        </div>
+
+        <br><br>
+        <main class="segunda_seccion">
+            <div class="sobre_mi" id="sobre_mi">
+            <h2>About Me</h2>
+            <p>
+            ¡Hola! Soy estudiante de Ingeniería en Software, actualmente en el tercer cuatrimestre,
+            y estoy buscando una oportunidad de prácticas profesionales donde pueda aportar y seguir creciendo.
+            </p>
+            <p>
+            Tengo experiencia en desarrollo web con <strong>HTML5, CSS3 y JavaScript moderno</strong>,
+            respaldada por cursos certificados en Udemy y proyectos personales y colaborativos donde
+            he trabajado con control de versiones usando <strong>Git y GitHub</strong>.
+            </p>
+            <p>
+            Me apasiona el desarrollo fullstack y estoy en constante aprendizaje de nuevas tecnologías.
+            Soy autodidacta, comprometido y con buenas habilidades para el trabajo en equipo.
+            </p>
+            </div>
+
+            <div class="skills">
+                <h2>Skills</h2>
+                <div>
+                    <img src="img/js-icon.png" alt="icono de js" width="30px">
+                    <img src="img/html-icon.png" alt="icono de html" width="30px">
+                    <img src="img/css-icon.png" alt="icono de css" width="30px">
+                    <img src="img/git-icon.png" alt="icono de git" width="30px">
+                </div>
+            </div>
+            <div class="habilidades">
+                <h2>habilidades en aprendizaje</h2>
+                <div class="icon-grid">
+                    <img src="img/java-icon.png" alt="icono de java" width="30px">
+                    <img src="img/nodejs-icon.png" alt="icono de nodejs" width="30px">
+                </div>
+            </div>
+
+            <div class="contacto_bento" id="contacto">
+                <h2>Contacto</h2>
+                <p><strong>Correo:</strong> addnovel1474@gmail.com</p>
+                <p><strong>GitHub:</strong> github.com/MoggerSir</p>
+                <p><em>"Disponible para prácticas profesionales"</em></p>
+            </div>
+        </main>
+
+        <script src="js/CartsCreation.js"></script>
+</body>
+</html>

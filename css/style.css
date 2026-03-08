@@ -1,0 +1,454 @@
+/* Minimalist Gothic CSS */
+
+:root {
+  --bg-color: #050505;
+  --bg-color2: #222020;
+  --text-color: #dcdcdc;
+  --accent-color: #800000; /* Deep Red */
+
+  /* Colors */
+  --color-primary: #d8d1d1; /* Deep Red */
+  --color-secondary: #7e7b7b; /* Light Gray */
+  --color-tertiary: #222020; /* Dark Gray */
+
+  --font-code:'Consolas', monospace;
+  --sombraEspecial:9px 8px 12px #8000008f, -9px -8px 22px #8000008f, 9px -8px 22px #8000008f, -9px 8px 22px #8000008f;
+
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-code);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: var(--font-code);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: normal;
+  padding-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.5vw;
+  color: var(--color-primary);
+}
+
+h2 {
+  font-size: 1.5vw;
+  color: #adaaaa;
+}
+
+h3 {
+  font-size: 1.2vw;
+  color: var(--color-secondary);
+}
+
+/* Layout */
+.contenedor {
+  max-width: 100%;
+  width: 90%;
+  padding: 2rem;
+}
+
+.header {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  position: fixed;
+  z-index: 1000;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: #00000059;
+  z-index: -1;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.menu div {
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu div:active {
+  color: var(--accent-color);
+}
+
+.nombre {
+  color: var(--color-primary);
+  margin-top: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.nombre:hover {
+  color: var(--accent-color);
+  cursor: default;
+}
+
+/* Section: Principal / Hero */
+.principal {
+  max-width: 80em;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+  background-color: var(--bg-color2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.principal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(105, 0, 0, 0.159);
+  border-color: var(--accent-color);
+}
+
+.foto {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#foto {
+  border-radius: 5px;
+  max-width: 140px;
+  max-height: 140px;
+  min-width: 100px;
+  min-height: 100px;
+  margin: 1rem;
+  box-shadow: 9px 8px 12px rgba(16, 0, 0, 0.951);
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  margin-right: 1.5rem;
+}
+
+#foto:hover {
+  filter: grayscale(0%);
+}
+
+.contacto-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.botones_contacto {
+  display: flex;
+  gap: 1rem;
+  min-width: 200px;
+}
+
+.Correo {
+  min-width: 100px;
+  max-width: 300px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: var(--accent-color);
+  box-shadow: 5px 5px 5px rgba(16, 0, 0, 0.548);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.Correo:active {
+  transform: scale(0.9);
+}
+
+#iconos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  text-align: center;
+}
+
+.iconos {
+  width: 30px;
+  height: 30px;
+  opacity: 0.7;
+  transition: opacity 0.3s, filter 0.3s ease;
+  margin-right: 1.5rem;
+  filter: grayscale(100%);
+}
+
+.iconos:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  animation: alzar 0.5s ease-in-out forwards;
+}
+
+/* Section: Projects Container (Shared styles) */
+.proyectos_contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+}
+
+.proyecto-card {
+    background-color: var(--bg-color2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(128, 0, 0, 0.4);
+}
+
+.proyecto-card h4 {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.proyecto-card p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.proyecto-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    filter: grayscale(80%);
+    transition: filter 0.3s ease;
+}
+
+.proyecto-card:hover img {
+    filter: grayscale(0%);
+}
+
+/* Section: About Me / Content */
+/* Section: segunda_seccion - Bento Grid / Tetris Style */
+.segunda_seccion {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.sobre_mi, .skills, .habilidades {
+  background-color: var(--bg-color2);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sobre_mi:hover, .skills:hover, .habilidades:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(128, 0, 0, 0.2);
+  border-color: var(--accent-color);
+}
+
+.sobre_mi {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.skills {
+  grid-column: span 1;
+}
+
+.habilidades {
+  grid-column: span 1;
+}
+
+.contacto_bento {
+  grid-column: span 3;
+  background-color: var(--bg-color2);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contacto_bento:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(128, 0, 0, 0.2);
+  border-color: var(--accent-color);
+}
+
+.contacto_bento p {
+  font-size: 1rem;
+  color: #b0b0b0;
+}
+
+.sobre_mi p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-align: justify;
+  color: #b0b0b0;
+}
+
+.icon-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Responsive Bento */
+@media (max-width: 900px) {
+  .segunda_seccion {
+    grid-template-columns: 1fr;
+  }
+  
+  .sobre_mi, .skills, .habilidades {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* Animations */
+@keyframes alzar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes desplegar {
+  from { transform: translateY(-10%); }
+  to { transform: translateY(0); }
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  .header {
+    padding: 0 1rem;
+  }
+
+  .principal {
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: 5rem;
+  }
+
+  .botones_contacto {
+    flex-direction: column;
+  }
+
+  .Correo {
+    width: 100%;
+  }
+
+  h1 { font-size: 5.5vw; }
+  h2 { font-size: 4.5vw; }
+  h3 { font-size: 3.2vw; }
+
+  .nombre {
+    font-size: 4vw;
+    text-align: center;
+  }
+}
+
+/* Image Expansion Overlay */
+.overlay-imagen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    cursor: pointer;
+    animation: desplegar 0.3s ease-out;
+}
+
+.imagen-expandida {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(128, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+.btn-proyecto {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-code);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 0.5rem;
+    align-self: flex-start;
+}
+
+.btn-proyecto:hover {
+    background-color: #a00000;
+    transform: translateY(-2px);
+}
+
+.btn-proyecto:active {
+    transform: translateY(0);
+}
