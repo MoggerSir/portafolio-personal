@@ -48,6 +48,9 @@ const agregarProyecto = (titulo, descripcion, imagenSrc, link) => {
     
     gridProyectos.appendChild(card);
 }
+document.getElementById('github').addEventListener('click', () => {
+    window.open('https://github.com/MoggerSir', '_blank');
+});
 
 agregarProyecto(
     "Proyecto 1: Carreras Clandestinas de Gokus", 
@@ -62,4 +65,10 @@ agregarProyecto(
     "/img/proyecto2.png",
     'https://github.com/MoggerSir/Blackjack_JS'
 );
+agregarProyecto(
+    'proyecto 3: calculadora de propinas',
+    'Una calculadora de propinas moderna y dinámica, diseñada con un enfoque en Arquitectura de Software y Clean Code. Este proyecto demuestra el uso avanzado de JavaScript para la generación de interfaces, manipulación del DOM y procesamiento de datos mediante expresiones regulares',
+    'img/proyecto3.png',
+    'https://github.com/MoggerSir/calculadora-de-propinas'
+)
 
