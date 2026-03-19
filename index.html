@@ -12,7 +12,7 @@
     <header class="header">
         
             <div class="logo">
-            <div class="nombre">Josmar Francisco Galindo Ocampo</div>
+            <div class="nombre" onclick="document.getElementById('Principal').scrollIntoView({behavior: 'smooth'})">Josmar Francisco Galindo Ocampo</div>
             </div>
             <div class="menu">
                 <div class="seccion" onclick="document.getElementById('proyectos').scrollIntoView({behavior: 'smooth'})">proyectos</div>
@@ -21,11 +21,11 @@
             </div>
         </header>
 
-        <div class="contenedor">
+        <div id="Principal" class="contenedor">
 
         <div class="principal">
 
-            <img id="foto" src="img/mi foto.jpeg" alt="mi foto" width="200px">
+            <img  id="foto" src="img/mi foto.jpeg" alt="mi foto" width="200px">
 
             <div class="foto">
                 <h1>Josmar Francisco <br>Galindo Ocampo</h1>

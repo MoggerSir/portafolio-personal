@@ -9,3 +9,4 @@ document.getElementById('MandarCorreo').addEventListener('click', () => {
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(gmailUrl, '_blank');
 });
+

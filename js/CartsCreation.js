@@ -48,9 +48,6 @@ const agregarProyecto = (titulo, descripcion, imagenSrc, link) => {
     
     gridProyectos.appendChild(card);
 }
-document.getElementById('github').addEventListener('click', () => {
-    window.open('https://github.com/MoggerSir', '_blank');
-});
 
 agregarProyecto(
     "Proyecto 1: Carreras Clandestinas de Gokus", 
@@ -67,8 +64,15 @@ agregarProyecto(
 );
 agregarProyecto(
     'proyecto 3: calculadora de propinas',
-    'Una calculadora de propinas moderna y dinámica, diseñada con un enfoque en Arquitectura de Software y Clean Code. Este proyecto demuestra el uso avanzado de JavaScript para la generación de interfaces, manipulación del DOM y procesamiento de datos mediante expresiones regulares',
+    'Este proyecto demuestra el uso avanzado de JavaScript para la generación de interfaces, manipulación del DOM y procesamiento de datos mediante expresiones regulares',
     'img/proyecto3.png',
     'https://github.com/MoggerSir/calculadora-de-propinas'
+);
+agregarProyecto(
+    'proyecto 4: chavo game',
+    'Este proyecto es un juego sencillo que implementa el genero de naves clásico del tipo Asteroits-like. ambientado en la serie animada del chavo del 8',
+    'img/proyecto4.png',
+    'https://github.com/MoggerSir/chavoGame'
+
 )
 
