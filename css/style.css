@@ -429,16 +429,41 @@ h3 {
   }
 }
 
-/* Media Queries Generales (Móvil) */
+/* Media Queries Generales (Móvil y Header) */
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nombre {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .menu {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 600px) {
   .header {
-    padding: 0 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .menu {
+    gap: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .principal {
     flex-direction: column;
     padding: 1rem;
-    margin-top: 5rem;
+    margin-top: 8rem;
   }
 
   .botones_contacto {
