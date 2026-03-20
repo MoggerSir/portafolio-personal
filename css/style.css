@@ -352,14 +352,34 @@ h3 {
 }
 
 /* Responsive Bento */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .segunda_seccion {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sobre_mi {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .skills, .habilidades {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .contacto_bento {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
   .segunda_seccion {
     grid-template-columns: 1fr;
   }
   
-  .sobre_mi, .skills, .habilidades {
+  .sobre_mi, .skills, .habilidades, .contacto_bento {
     grid-column: span 1;
-    grid-row: span 1;
+    grid-row: auto;
   }
 }
 
@@ -375,7 +395,41 @@ h3 {
   to { transform: translateY(0); }
 }
 
-/* Media Queries */
+/* Media Queries para Botones de Contacto y Principal */
+@media (max-width: 1024px) {
+  .principal {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .contacto-wrapper {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  .botones_contacto {
+    justify-content: center;
+  }
+  .Correo {
+    min-width: 160px;
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 850px) {
+  .botones_contacto {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .Correo {
+    width: 80%;
+    max-width: 400px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Media Queries Generales (Móvil) */
 @media (max-width: 600px) {
   .header {
     padding: 0 1rem;
