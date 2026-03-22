@@ -33,6 +33,9 @@ agregarProyecto(
     "img/proyecto1.png",
     "https://github.com/MoggerSir/Race-game"
 );
-
-
-
+agregarProyecto(
+    "Proyecto 6: GalaxyGem - Proyecto de Nave Espacial", 
+    "El objetivo de este proyecto fue poner a prueba mis habilidades de programación en equipo, trabajando codo con codo con un amigo en un repositorio de GitHub usando git y github para crear algo divertido desde cero.", 
+    "img/proyecto6.png",
+    "https://github.com/MoggerSir/Jugeo-de-space-racer"
+);
