@@ -32,6 +32,13 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Typography */
@@ -68,12 +75,16 @@ h3 {
 .header {
   height: 75px;
   width: 100%;
+  max-width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 3rem;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 .header::before {
@@ -342,6 +353,7 @@ h3 {
   font-size: 1rem;
   text-align: justify;
   color: #b0b0b0;
+  overflow-wrap: break-word; /* Evita que palabras largas rompan el layout */
 }
 
 .icon-grid {
@@ -375,11 +387,32 @@ h3 {
 @media (max-width: 768px) {
   .segunda_seccion {
     grid-template-columns: 1fr;
+    padding: 0;
   }
   
   .sobre_mi, .skills, .habilidades, .contacto_bento {
     grid-column: span 1;
     grid-row: auto;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contenedor {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .segunda_seccion {
+    gap: 1rem;
+  }
+
+  .sobre_mi, .skills, .habilidades, .contacto_bento {
+    padding: 1.25rem;
+  }
+
+  .sobre_mi p {
+    font-size: 0.95rem;
   }
 }
 
