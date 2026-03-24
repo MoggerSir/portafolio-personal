@@ -304,7 +304,7 @@ h3 {
   justify-content: center;
 }
 
-.sobre_mi:hover, .skills:hover, .habilidades:hover {
+.sobre_mi:hover, .skills:hover, .habilidades:hover, .formacion_bento:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(128, 0, 0, 0.2);
   border-color: var(--accent-color);
@@ -321,6 +321,58 @@ h3 {
 
 .habilidades {
   grid-column: span 1;
+}
+
+.formacion_bento {
+  grid-column: span 3;
+  background-color: var(--bg-color2);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cursos_lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.curso_item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.curso_info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress_wrapper {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress_bar {
+  height: 100%;
+  background-color: var(--accent-color);
+  transition: width 1.5s ease-out;
+}
+
+.progress_text_simple {
+  font-size: 0.75rem;
+  color: #666;
+  margin-left: 10px;
+  font-weight: normal;
 }
 
 .contacto_bento {
@@ -379,7 +431,7 @@ h3 {
     grid-row: span 1;
   }
 
-  .contacto_bento {
+  .contacto_bento, .formacion_bento {
     grid-column: span 2;
   }
 }
@@ -390,7 +442,7 @@ h3 {
     padding: 0;
   }
   
-  .sobre_mi, .skills, .habilidades, .contacto_bento {
+  .sobre_mi, .skills, .habilidades, .contacto_bento, .formacion_bento {
     grid-column: span 1;
     grid-row: auto;
     padding: 1.5rem;
@@ -407,7 +459,7 @@ h3 {
     gap: 1rem;
   }
 
-  .sobre_mi, .skills, .habilidades, .contacto_bento {
+  .sobre_mi, .skills, .habilidades, .contacto_bento, .formacion_bento {
     padding: 1.25rem;
   }
 
@@ -417,10 +469,20 @@ h3 {
 }
 
 /* Animations */
-@keyframes alzar {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-  100% { transform: scale(1); }
+.icon-grid img.logo-gray {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.icon-grid img.logo-gray:hover {
+  opacity: 0.8;
+}
+
+.icon-grid img.logo-color {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 @keyframes desplegar {
